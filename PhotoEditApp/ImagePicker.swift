@@ -18,7 +18,6 @@ struct ImagePicker: UIViewControllerRepresentable {
 
         let picker = PHPickerViewController(configuration: config)
         picker.delegate = context.coordinator
-
         return picker
     }
 
@@ -43,9 +42,9 @@ struct ImagePicker: UIViewControllerRepresentable {
                 return
             }
 
-            provider.loadObject(ofClass: UIImage.self) { image, _ in
+            provider.loadObject(ofClass: UIImage.self) { object, _ in
                 DispatchQueue.main.async {
-                    self.parent.selectedImage = image as? UIImage
+                    self.parent.selectedImage = object as? UIImage
                 }
             }
         }

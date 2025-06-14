@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct PhotoEditAppApp: App {
+struct PhotoEditorApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartView()
         }
     }
 }

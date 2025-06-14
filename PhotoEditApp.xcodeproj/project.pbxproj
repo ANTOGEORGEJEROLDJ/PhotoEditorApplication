@@ -12,6 +12,21 @@
 		4E280D822DFD4D5F00D309D5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280D7D2DFD4D5F00D309D5 /* ImagePicker.swift */; };
 		4E280D832DFD4D5F00D309D5 /* PhotoEditAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280D7E2DFD4D5F00D309D5 /* PhotoEditAppApp.swift */; };
 		4E280D842DFD4D5F00D309D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E280D7A2DFD4D5F00D309D5 /* Assets.xcassets */; };
+		4E280D882DFD4E9B00D309D5 /* FreeformCropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280D872DFD4E9B00D309D5 /* FreeformCropView.swift */; };
+		4E280D8A2DFD4EB200D309D5 /* DrawingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280D892DFD4EB200D309D5 /* DrawingOverlay.swift */; };
+		4E280D8D2DFD54A500D309D5 /* AdvancedEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280D8C2DFD54A500D309D5 /* AdvancedEditorView.swift */; };
+		4E280D902DFD571500D309D5 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280D8F2DFD571500D309D5 /* StartView.swift */; };
+		4E280D922DFD572E00D309D5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280D912DFD572E00D309D5 /* HomeView.swift */; };
+		4E280D942DFD576B00D309D5 /* CropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280D932DFD576B00D309D5 /* CropView.swift */; };
+		4E280D972DFD5BC200D309D5 /* TextOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280D962DFD5BC200D309D5 /* TextOverlayView.swift */; };
+		4E280D9C2DFD5CED00D309D5 /* SaturationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280D9B2DFD5CED00D309D5 /* SaturationView.swift */; };
+		4E280D9F2DFD5D0F00D309D5 /* ShadowEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280D9E2DFD5D0F00D309D5 /* ShadowEffectView.swift */; };
+		4E280DA12DFD5D2600D309D5 /* BrightnessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280DA02DFD5D2600D309D5 /* BrightnessView.swift */; };
+		4E280DA52DFD5D9200D309D5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280DA42DFD5D9200D309D5 /* CoreDataManager.swift */; };
+		4E280DA82DFD5DB100D309D5 /* SaveButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280DA72DFD5DB100D309D5 /* SaveButtonView.swift */; };
+		4E280DAB2DFD5DF500D309D5 /* SavedImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280DAA2DFD5DF500D309D5 /* SavedImagesView.swift */; };
+		4E280DAE2DFD5EAB00D309D5 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E280DAC2DFD5EAB00D309D5 /* Model.xcdatamodeld */; };
+		4E280DB12DFD606D00D309D5 /* PhotoEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280DB02DFD606D00D309D5 /* PhotoEditorViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +55,21 @@
 		4E280D7C2DFD4D5F00D309D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4E280D7D2DFD4D5F00D309D5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		4E280D7E2DFD4D5F00D309D5 /* PhotoEditAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditAppApp.swift; sourceTree = "<group>"; };
+		4E280D872DFD4E9B00D309D5 /* FreeformCropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeformCropView.swift; sourceTree = "<group>"; };
+		4E280D892DFD4EB200D309D5 /* DrawingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingOverlay.swift; sourceTree = "<group>"; };
+		4E280D8C2DFD54A500D309D5 /* AdvancedEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedEditorView.swift; sourceTree = "<group>"; };
+		4E280D8F2DFD571500D309D5 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		4E280D912DFD572E00D309D5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4E280D932DFD576B00D309D5 /* CropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropView.swift; sourceTree = "<group>"; };
+		4E280D962DFD5BC200D309D5 /* TextOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOverlayView.swift; sourceTree = "<group>"; };
+		4E280D9B2DFD5CED00D309D5 /* SaturationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaturationView.swift; sourceTree = "<group>"; };
+		4E280D9E2DFD5D0F00D309D5 /* ShadowEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowEffectView.swift; sourceTree = "<group>"; };
+		4E280DA02DFD5D2600D309D5 /* BrightnessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightnessView.swift; sourceTree = "<group>"; };
+		4E280DA42DFD5D9200D309D5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		4E280DA72DFD5DB100D309D5 /* SaveButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButtonView.swift; sourceTree = "<group>"; };
+		4E280DAA2DFD5DF500D309D5 /* SavedImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedImagesView.swift; sourceTree = "<group>"; };
+		4E280DAD2DFD5EAB00D309D5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		4E280DB02DFD606D00D309D5 /* PhotoEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditorViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -105,7 +135,19 @@
 		4E280D7F2DFD4D5F00D309D5 /* PhotoEditApp */ = {
 			isa = PBXGroup;
 			children = (
+				4E280DAF2DFD606000D309D5 /* PhotoEditorViewModel */,
+				4E280D7D2DFD4D5F00D309D5 /* ImagePicker.swift */,
+				4E280D8E2DFD56FB00D309D5 /* StartPage */,
 				4E280D852DFD4D7000D309D5 /* BlackWhite */,
+				4E280D982DFD5BCD00D309D5 /* CropView */,
+				4E280D952DFD5BB900D309D5 /* TextOverlayView */,
+				4E280D9A2DFD5CDF00D309D5 /* SaturationView */,
+				4E280D9D2DFD5D0100D309D5 /* ShadowEffectView */,
+				4E280D8B2DFD549900D309D5 /* New Group */,
+				4E280DA22DFD5D2E00D309D5 /* BrightnessView */,
+				4E280DA62DFD5DA300D309D5 /* SaveButtonView */,
+				4E280DA92DFD5DE900D309D5 /* SavedImagesView */,
+				4E280DA32DFD5D7400D309D5 /* CoreDataManager */,
 				4E280D7A2DFD4D5F00D309D5 /* Assets.xcassets */,
 			);
 			path = PhotoEditApp;
@@ -115,9 +157,108 @@
 			isa = PBXGroup;
 			children = (
 				4E280D7B2DFD4D5F00D309D5 /* BlackWhiteFilterView.swift */,
-				4E280D7D2DFD4D5F00D309D5 /* ImagePicker.swift */,
 			);
 			path = BlackWhite;
+			sourceTree = "<group>";
+		};
+		4E280D862DFD4E7300D309D5 /* Crop Feature */ = {
+			isa = PBXGroup;
+			children = (
+				4E280D872DFD4E9B00D309D5 /* FreeformCropView.swift */,
+				4E280D892DFD4EB200D309D5 /* DrawingOverlay.swift */,
+			);
+			path = "Crop Feature";
+			sourceTree = "<group>";
+		};
+		4E280D8B2DFD549900D309D5 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				4E280D8C2DFD54A500D309D5 /* AdvancedEditorView.swift */,
+				4E280D862DFD4E7300D309D5 /* Crop Feature */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		4E280D8E2DFD56FB00D309D5 /* StartPage */ = {
+			isa = PBXGroup;
+			children = (
+				4E280D8F2DFD571500D309D5 /* StartView.swift */,
+				4E280D912DFD572E00D309D5 /* HomeView.swift */,
+			);
+			path = StartPage;
+			sourceTree = "<group>";
+		};
+		4E280D952DFD5BB900D309D5 /* TextOverlayView */ = {
+			isa = PBXGroup;
+			children = (
+				4E280D962DFD5BC200D309D5 /* TextOverlayView.swift */,
+			);
+			path = TextOverlayView;
+			sourceTree = "<group>";
+		};
+		4E280D982DFD5BCD00D309D5 /* CropView */ = {
+			isa = PBXGroup;
+			children = (
+				4E280D932DFD576B00D309D5 /* CropView.swift */,
+			);
+			path = CropView;
+			sourceTree = "<group>";
+		};
+		4E280D9A2DFD5CDF00D309D5 /* SaturationView */ = {
+			isa = PBXGroup;
+			children = (
+				4E280D9B2DFD5CED00D309D5 /* SaturationView.swift */,
+			);
+			path = SaturationView;
+			sourceTree = "<group>";
+		};
+		4E280D9D2DFD5D0100D309D5 /* ShadowEffectView */ = {
+			isa = PBXGroup;
+			children = (
+				4E280D9E2DFD5D0F00D309D5 /* ShadowEffectView.swift */,
+			);
+			path = ShadowEffectView;
+			sourceTree = "<group>";
+		};
+		4E280DA22DFD5D2E00D309D5 /* BrightnessView */ = {
+			isa = PBXGroup;
+			children = (
+				4E280DA02DFD5D2600D309D5 /* BrightnessView.swift */,
+			);
+			path = BrightnessView;
+			sourceTree = "<group>";
+		};
+		4E280DA32DFD5D7400D309D5 /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				4E280DA42DFD5D9200D309D5 /* CoreDataManager.swift */,
+				4E280DAC2DFD5EAB00D309D5 /* Model.xcdatamodeld */,
+			);
+			path = CoreDataManager;
+			sourceTree = "<group>";
+		};
+		4E280DA62DFD5DA300D309D5 /* SaveButtonView */ = {
+			isa = PBXGroup;
+			children = (
+				4E280DA72DFD5DB100D309D5 /* SaveButtonView.swift */,
+			);
+			path = SaveButtonView;
+			sourceTree = "<group>";
+		};
+		4E280DA92DFD5DE900D309D5 /* SavedImagesView */ = {
+			isa = PBXGroup;
+			children = (
+				4E280DAA2DFD5DF500D309D5 /* SavedImagesView.swift */,
+			);
+			path = SavedImagesView;
+			sourceTree = "<group>";
+		};
+		4E280DAF2DFD606000D309D5 /* PhotoEditorViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4E280DB02DFD606D00D309D5 /* PhotoEditorViewModel.swift */,
+			);
+			path = PhotoEditorViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +403,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E280D942DFD576B00D309D5 /* CropView.swift in Sources */,
+				4E280DA12DFD5D2600D309D5 /* BrightnessView.swift in Sources */,
+				4E280D922DFD572E00D309D5 /* HomeView.swift in Sources */,
+				4E280DA52DFD5D9200D309D5 /* CoreDataManager.swift in Sources */,
+				4E280DAB2DFD5DF500D309D5 /* SavedImagesView.swift in Sources */,
+				4E280DAE2DFD5EAB00D309D5 /* Model.xcdatamodeld in Sources */,
 				4E280D802DFD4D5F00D309D5 /* BlackWhiteFilterView.swift in Sources */,
+				4E280DA82DFD5DB100D309D5 /* SaveButtonView.swift in Sources */,
+				4E280D8A2DFD4EB200D309D5 /* DrawingOverlay.swift in Sources */,
+				4E280D9C2DFD5CED00D309D5 /* SaturationView.swift in Sources */,
+				4E280D8D2DFD54A500D309D5 /* AdvancedEditorView.swift in Sources */,
+				4E280D9F2DFD5D0F00D309D5 /* ShadowEffectView.swift in Sources */,
+				4E280D902DFD571500D309D5 /* StartView.swift in Sources */,
+				4E280D882DFD4E9B00D309D5 /* FreeformCropView.swift in Sources */,
 				4E280D812DFD4D5F00D309D5 /* ContentView.swift in Sources */,
+				4E280D972DFD5BC200D309D5 /* TextOverlayView.swift in Sources */,
+				4E280DB12DFD606D00D309D5 /* PhotoEditorViewModel.swift in Sources */,
 				4E280D822DFD4D5F00D309D5 /* ImagePicker.swift in Sources */,
 				4E280D832DFD4D5F00D309D5 /* PhotoEditAppApp.swift in Sources */,
 			);
@@ -423,6 +579,7 @@
 		4E280D0A2DFD456400D309D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -435,6 +592,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,6 +609,7 @@
 		4E280D0B2DFD456400D309D5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -463,6 +622,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -588,6 +748,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4E280DAC2DFD5EAB00D309D5 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4E280DAD2DFD5EAB00D309D5 /* Model.xcdatamodel */,
+			);
+			currentVersion = 4E280DAD2DFD5EAB00D309D5 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4E280CE02DFD456000D309D5 /* Project object */;
 }
