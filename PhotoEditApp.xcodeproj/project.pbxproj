@@ -27,6 +27,7 @@
 		4E280DAB2DFD5DF500D309D5 /* SavedImagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280DAA2DFD5DF500D309D5 /* SavedImagesView.swift */; };
 		4E280DAE2DFD5EAB00D309D5 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E280DAC2DFD5EAB00D309D5 /* Model.xcdatamodeld */; };
 		4E280DB12DFD606D00D309D5 /* PhotoEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280DB02DFD606D00D309D5 /* PhotoEditorViewModel.swift */; };
+		4E280DB32DFD6A0A00D309D5 /* NeonButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280DB22DFD6A0A00D309D5 /* NeonButtonStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		4E280DAA2DFD5DF500D309D5 /* SavedImagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedImagesView.swift; sourceTree = "<group>"; };
 		4E280DAD2DFD5EAB00D309D5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		4E280DB02DFD606D00D309D5 /* PhotoEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditorViewModel.swift; sourceTree = "<group>"; };
+		4E280DB22DFD6A0A00D309D5 /* NeonButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonButtonStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -135,7 +137,6 @@
 		4E280D7F2DFD4D5F00D309D5 /* PhotoEditApp */ = {
 			isa = PBXGroup;
 			children = (
-				4E280DAF2DFD606000D309D5 /* PhotoEditorViewModel */,
 				4E280D7D2DFD4D5F00D309D5 /* ImagePicker.swift */,
 				4E280D8E2DFD56FB00D309D5 /* StartPage */,
 				4E280D852DFD4D7000D309D5 /* BlackWhite */,
@@ -147,6 +148,7 @@
 				4E280DA22DFD5D2E00D309D5 /* BrightnessView */,
 				4E280DA62DFD5DA300D309D5 /* SaveButtonView */,
 				4E280DA92DFD5DE900D309D5 /* SavedImagesView */,
+				4E280DAF2DFD606000D309D5 /* PhotoEditorViewModel */,
 				4E280DA32DFD5D7400D309D5 /* CoreDataManager */,
 				4E280D7A2DFD4D5F00D309D5 /* Assets.xcassets */,
 			);
@@ -241,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				4E280DA72DFD5DB100D309D5 /* SaveButtonView.swift */,
+				4E280DB22DFD6A0A00D309D5 /* NeonButtonStyle.swift */,
 			);
 			path = SaveButtonView;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				4E280D812DFD4D5F00D309D5 /* ContentView.swift in Sources */,
 				4E280D972DFD5BC200D309D5 /* TextOverlayView.swift in Sources */,
 				4E280DB12DFD606D00D309D5 /* PhotoEditorViewModel.swift in Sources */,
+				4E280DB32DFD6A0A00D309D5 /* NeonButtonStyle.swift in Sources */,
 				4E280D822DFD4D5F00D309D5 /* ImagePicker.swift in Sources */,
 				4E280D832DFD4D5F00D309D5 /* PhotoEditAppApp.swift in Sources */,
 			);

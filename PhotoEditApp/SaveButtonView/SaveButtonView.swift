@@ -26,21 +26,21 @@ struct SaveButtonView: View {
         .padding(.top)
     }
 }
-//struct SaveButtonView: View {
-//    let image: UIImage
-//    var onSave: () -> Void
-//
-//    var body: some View {
-//        Button(action: onSave) {
-//            Text("Save Changes")
-//                .font(.headline)
-//                .frame(maxWidth: .infinity)
-//                .padding()
-//                .background(Color.purple)
-//                .foregroundColor(.white)
-//                .cornerRadius(10)
-//                .shadow(radius: 4)
-//        }
-//        .padding()
-//    }
-//}
+struct SaveButtonViews: View {
+    let image: UIImage
+    var onSave: () -> Void
+
+    var body: some View {
+        Button(action: onSave) {
+            Text("Save Changes")
+                .font(.headline)
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(Color.purple)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+                .shadow(radius: 4)
+        }
+        .padding()
+    }
+}

@@ -10,15 +10,15 @@ import CoreImage
 import CoreImage.CIFilterBuiltins
 
 struct BlackWhiteFilterView: View {
-    let image: UIImage
+    @ObservedObject var viewModel: PhotoEditorViewModel
     @State private var grayscaleAmount: Double = 1.0
     private let context = CIContext()
-    private let colorFilter = CIFilter.colorControls()
+    private let filter = CIFilter.colorControls()
 
     var body: some View {
         VStack {
-            if let filtered = applyGrayscale(to: image, amount: grayscaleAmount) {
-                Image(uiImage: filtered)
+            if let outputImage = applyGrayscale(to: viewModel.editedImage, amount: grayscaleAmount) {
+                Image(uiImage: outputImage)
                     .resizable()
                     .scaledToFit()
                     .frame(height: 300)
@@ -26,21 +26,21 @@ struct BlackWhiteFilterView: View {
 
             Slider(value: $grayscaleAmount, in: 0...1)
                 .padding()
-                .onChange(of: grayscaleAmount) { _ in }
 
-            Text("Grayscale: \(String(format: "%.2f", 1 - grayscaleAmount))")
+            SaveButtonViews(image: applyGrayscale(to: viewModel.editedImage, amount: grayscaleAmount)!) {
+                viewModel.updateImage(applyGrayscale(to: viewModel.editedImage, amount: grayscaleAmount)!)
+            }
         }
         .navigationTitle("Black & White")
-        .padding()
     }
 
     func applyGrayscale(to image: UIImage, amount: Double) -> UIImage? {
         guard let cgImage = image.cgImage else { return nil }
         let ciImage = CIImage(cgImage: cgImage)
-        colorFilter.inputImage = ciImage
-        colorFilter.saturation = Float(amount)
-        guard let output = colorFilter.outputImage,
-              let cgOutput = context.createCGImage(output, from: output.extent) else { return nil }
-        return UIImage(cgImage: cgOutput)
+        filter.inputImage = ciImage
+        filter.saturation = Float(amount)
+        guard let output = filter.outputImage,
+              let cg = context.createCGImage(output, from: output.extent) else { return nil }
+        return UIImage(cgImage: cg)
     }
 }

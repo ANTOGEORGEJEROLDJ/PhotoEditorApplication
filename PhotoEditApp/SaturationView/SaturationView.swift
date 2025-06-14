@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import CoreImage
 import CoreImage.CIFilterBuiltins
 
 struct SaturationView: View {
-    let image: UIImage
+    @ObservedObject var viewModel: PhotoEditorViewModel
     @State private var saturation: Double = 1.0
 
     private let context = CIContext()
@@ -17,31 +18,38 @@ struct SaturationView: View {
 
     var body: some View {
         VStack {
-            if let filtered = applySaturation(to: image, value: saturation) {
-                Image(uiImage: filtered)
+            if let filteredImage = applySaturation(to: viewModel.editedImage, value: saturation) {
+                Image(uiImage: filteredImage)
                     .resizable()
                     .scaledToFit()
                     .frame(height: 300)
+
+                Slider(value: $saturation, in: 0...2)
+                    .padding()
+
+                SaveButtonViews(image: filteredImage) {
+                    viewModel.updateImage(filteredImage)
+                }
+            } else {
+                Text("Failed to load image.")
+                    .foregroundColor(.red)
+                    .padding()
             }
-
-            Slider(value: $saturation, in: 0...2)
-                .padding()
-            Text("Saturation: \(String(format: "%.2f", saturation))")
-
-            Spacer()
         }
         .navigationTitle("Saturation")
-        .padding()
     }
 
     func applySaturation(to image: UIImage, value: Double) -> UIImage? {
-        guard let cg = image.cgImage else { return nil }
-        let ciImage = CIImage(cgImage: cg)
+        guard let cgImage = image.cgImage else { return nil }
+
+        let ciImage = CIImage(cgImage: cgImage)
         filter.inputImage = ciImage
         filter.saturation = Float(value)
 
         guard let output = filter.outputImage,
-              let cgOutput = context.createCGImage(output, from: output.extent) else { return nil }
+              let cgOutput = context.createCGImage(output, from: output.extent) else {
+            return nil
+        }
 
         return UIImage(cgImage: cgOutput)
     }

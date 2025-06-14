@@ -8,16 +8,14 @@
 import SwiftUI
 
 struct CropView: View {
-    var inputImage: UIImage?
-    var image: UIImage?
+    @ObservedObject var viewModel: PhotoEditorViewModel
     @State private var selectedRatio: CGSize = CGSize(width: 1, height: 1)
     @State private var showSaveAlert = false
 
     var body: some View {
         VStack {
-            if let image = image {
-                let cropped = cropImage(image, to: selectedRatio)
-                Image(uiImage: cropped ?? image)
+            if let cropped = cropImage(viewModel.editedImage, to: selectedRatio) {
+                Image(uiImage: cropped)
                     .resizable()
                     .scaledToFit()
                     .frame(height: 300)
@@ -31,10 +29,9 @@ struct CropView: View {
             .padding()
             .buttonStyle(.borderedProminent)
 
-            Button("Save Cropped Image") {
-                if let image = image,
-                   let cropped = cropImage(image, to: selectedRatio) {
-                    UIImageWriteToSavedPhotosAlbum(cropped, nil, nil, nil)
+            Button("Apply Crop") {
+                if let cropped = cropImage(viewModel.editedImage, to: selectedRatio) {
+                    viewModel.updateImage(cropped)
                     showSaveAlert = true
                 }
             }
@@ -43,10 +40,14 @@ struct CropView: View {
             .foregroundColor(.white)
             .cornerRadius(10)
 
+            SaveButtonViews(image: viewModel.editedImage) {
+                viewModel.saveToCoreData()
+            }
+
             Spacer()
         }
         .navigationTitle("Crop Image")
-        .alert("Image Saved!", isPresented: $showSaveAlert) {
+        .alert("Cropped Image Applied", isPresented: $showSaveAlert) {
             Button("OK", role: .cancel) { }
         }
     }
@@ -63,4 +64,3 @@ struct CropView: View {
         return UIImage(cgImage: cgImage)
     }
 }
-
