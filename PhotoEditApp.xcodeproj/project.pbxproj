@@ -144,12 +144,12 @@
 				4E280D952DFD5BB900D309D5 /* TextOverlayView */,
 				4E280D9A2DFD5CDF00D309D5 /* SaturationView */,
 				4E280D9D2DFD5D0100D309D5 /* ShadowEffectView */,
-				4E280D8B2DFD549900D309D5 /* New Group */,
 				4E280DA22DFD5D2E00D309D5 /* BrightnessView */,
 				4E280DA62DFD5DA300D309D5 /* SaveButtonView */,
 				4E280DA92DFD5DE900D309D5 /* SavedImagesView */,
 				4E280DAF2DFD606000D309D5 /* PhotoEditorViewModel */,
 				4E280DA32DFD5D7400D309D5 /* CoreDataManager */,
+				4E280D8B2DFD549900D309D5 /* New Group */,
 				4E280D7A2DFD4D5F00D309D5 /* Assets.xcassets */,
 			);
 			path = PhotoEditApp;

@@ -40,9 +40,9 @@ struct CropView: View {
             .foregroundColor(.white)
             .cornerRadius(10)
 
-            SaveButtonViews(image: viewModel.editedImage) {
-                viewModel.saveToCoreData()
-            }
+//            SaveButtonViews(image: viewModel.editedImage) {
+//                viewModel.saveToCoreData()
+//            }
 
             Spacer()
         }

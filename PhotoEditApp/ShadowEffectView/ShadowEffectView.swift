@@ -5,10 +5,17 @@
 //  Created by Paranjothi iOS MacBook Pro on 14/06/25.
 //
 
+//
+//  ShadowEffectView.swift
+//  PhotoEditApp
+//
+
 import SwiftUI
 
 struct ShadowEffectView: View {
     @ObservedObject var viewModel: PhotoEditorViewModel
+    @Environment(\.presentationMode) var presentationMode
+
     @State private var radius: CGFloat = 5
     @State private var offset: CGSize = CGSize(width: 5, height: 5)
     @State private var color: Color = .black
@@ -44,7 +51,7 @@ struct ShadowEffectView: View {
             }
             .padding()
 
-            Button("Apply Shadow & Save") {
+            Button("Save") {
                 if let shadowedImage = renderImageWithShadow(
                     baseImage: viewModel.editedImage,
                     radius: radius,
@@ -53,6 +60,11 @@ struct ShadowEffectView: View {
                 ) {
                     viewModel.updateImage(shadowedImage)
                     showSaveAlert = true
+
+                    // Optional: Auto dismiss
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        presentationMode.wrappedValue.dismiss()
+                    }
                 }
             }
             .padding()
@@ -60,9 +72,9 @@ struct ShadowEffectView: View {
             .foregroundColor(.white)
             .cornerRadius(10)
 
-            SaveButtonViews(image: viewModel.editedImage) {
-                viewModel.saveToCoreData()
-            }
+//            SaveButtonViews(image: viewModel.editedImage) {
+//                viewModel.saveToCoreData()
+//            }
 
             Spacer()
         }
@@ -73,8 +85,11 @@ struct ShadowEffectView: View {
     }
 
     func renderImageWithShadow(baseImage: UIImage, radius: CGFloat, offset: CGSize, color: UIColor) -> UIImage? {
-        let size = CGSize(width: baseImage.size.width + abs(offset.width) * 2,
-                          height: baseImage.size.height + abs(offset.height) * 2)
+        let size = CGSize(
+            width: baseImage.size.width + abs(offset.width) * 2,
+            height: baseImage.size.height + abs(offset.height) * 2
+        )
+
         let renderer = UIGraphicsImageRenderer(size: size)
         let image = renderer.image { context in
             let rect = CGRect(

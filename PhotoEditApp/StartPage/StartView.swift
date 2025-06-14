@@ -18,22 +18,35 @@ import PhotosUI
         var body: some View {
             NavigationView {
                 VStack {
-                    if let image = selectedImage {
-                        Image(uiImage: image)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 300)
-                    } else {
-                        Rectangle()
-                            .fill(Color.gray.opacity(0.3))
-                            .frame(height: 300)
-                            .overlay(Text("Select an Image").foregroundColor(.gray))
-                    }
+                    VStack{
+                        if let image = selectedImage {
+                            Image(uiImage: image)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 300)
+                        } else {
+                            Rectangle()
+                                .fill(Color.gray.opacity(0.3))
+                                .frame(height: 300)
+                                .overlay(Text("Select an Image").foregroundColor(.gray))
+                                .cornerRadius(17)
+                        }
+                    }.padding()
+                        .cornerRadius(14)
 
                     Button("Select Image") {
                         showPicker = true
                     }
                     .padding()
+                    .font(.subheadline)
+                    .foregroundColor(.white)
+                    .frame(width: 120, height: 50)
+                    .bold()
+                    .background(Color.red.opacity(0.7))
+                    .cornerRadius(13)
+                    
+                   
+                    
                     .sheet(isPresented: $showPicker) {
                         ImagePicker(selectedImage: $selectedImage)
                     }
@@ -49,6 +62,8 @@ import PhotosUI
                     .background(Color.blue)
                     .foregroundColor(.white)
                     .cornerRadius(10)
+                    .padding(.top, 30)
+                    
                 }
                 .navigationTitle("Photo Editor")
             }

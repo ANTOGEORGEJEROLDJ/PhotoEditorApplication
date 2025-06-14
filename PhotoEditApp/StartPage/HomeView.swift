@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct HomeScreen: View {
+    
+    
+    @State private var refreshID = UUID()
     let originalImage: UIImage
     @StateObject private var viewModel: PhotoEditorViewModel
-
+    
     init(originalImage: UIImage) {
         self.originalImage = originalImage
         _viewModel = StateObject(wrappedValue: PhotoEditorViewModel(image: originalImage))
     }
-
+    
     var body: some View {
         ScrollView {
             Image(uiImage: viewModel.editedImage)
@@ -23,30 +26,102 @@ struct HomeScreen: View {
                 .scaledToFit()
                 .frame(height: 300)
                 .padding()
-
-            VStack(spacing: 20) {
-                NavigationLink("1. Black & White", destination: BlackWhiteFilterView(viewModel: viewModel))
-                NavigationLink("2. Crop Image", destination: CropView(viewModel: viewModel))
-                NavigationLink("3. Text & Color Picker", destination: TextOverlayView(viewModel: viewModel))
-                NavigationLink("4. Saturation Adjust", destination: SaturationView(viewModel: viewModel))
-                NavigationLink("5. Shadow Effect", destination: ShadowEffectView(viewModel: viewModel))
-                NavigationLink("6. Brightness Adjust", destination: BrightnessView(viewModel: viewModel))
+                .id(refreshID)
+            
+            ScrollView (.horizontal){
+                HStack(spacing: 20) {
+                    NavigationLink(destination: BlackWhiteFilterView(viewModel: viewModel)){
+                        Text("Black&white")
+                            .font(.subheadline)
+                            .foregroundColor(.white)
+                            .frame(width: 90, height: 30)
+                            .bold()
+                            .padding()
+                            .background(Color.blue.opacity(0.7))
+                            .cornerRadius(15)
+                    }
+                    NavigationLink(destination: CropView(viewModel: viewModel)){
+                        Text("Crop")
+                            .font(.subheadline)
+                            .foregroundColor(.white)
+                            .frame(width: 90, height: 30)
+                            .bold()
+                            .padding()
+                            .background(Color.blue.opacity(0.7))
+                            .cornerRadius(15)
+                    }
+                    NavigationLink( destination: TextOverlayView(viewModel: viewModel)){
+                        Text("Text editor")
+                            .font(.subheadline)
+                            .foregroundColor(.white)
+                            .frame(width: 90, height: 30)
+                            .bold()
+                            .padding()
+                            .background(Color.blue.opacity(0.7))
+                            .cornerRadius(15)
+                    }
+                    NavigationLink(destination: SaturationView(viewModel: viewModel)){
+                        Text("Saturaction")
+                            .font(.subheadline)
+                            .foregroundColor(.white)
+                            .frame(width: 90, height: 30)
+                            .bold()
+                            .padding()
+                            .background(Color.blue.opacity(0.7))
+                            .cornerRadius(15)
+                    }
+                    NavigationLink(destination: ShadowEffectView(viewModel: viewModel)){
+                        Text("Shadow")
+                            .font(.subheadline)
+                            .foregroundColor(.white)
+                            .frame(width: 90, height: 30)
+                            .bold()
+                            .padding()
+                            .background(Color.blue.opacity(0.7))
+                            .cornerRadius(15)
+                    }
+                    NavigationLink(destination: BrightnessView(viewModel: viewModel)){
+                        Text("brightness")
+                            .font(.subheadline)
+                            .foregroundColor(.white)
+                            .frame(width: 90, height: 30)
+                            .bold()
+                            .padding()
+                            .background(Color.blue.opacity(0.7))
+                            .cornerRadius(15)
+                    }
+                }
+                .padding()
             }
-            .padding()
-
+            
             SaveButtonViews(image: viewModel.editedImage) {
                 viewModel.saveToCoreData()
             }
-
+            
             NavigationLink(destination: SavedImagesView()) {
                 Text("My Gallery")
                     .padding()
-                    .frame(maxWidth: .infinity)
+                    .frame(width: 350, height: 50)
                     .background(Color.orange)
                     .foregroundColor(.white)
                     .cornerRadius(10)
             }
         }
         .navigationTitle("Editor Home")
+        .onChange(of: viewModel.editedImage) { _ in
+            refreshID = UUID()
+        }
+    }
+}
+struct EditButtonStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.subheadline)
+            .foregroundColor(.white)
+            .frame(width: 90, height: 30)
+            .bold()
+            .padding()
+            .background(Color.blue.opacity(0.7))
+            .cornerRadius(15)
     }
 }

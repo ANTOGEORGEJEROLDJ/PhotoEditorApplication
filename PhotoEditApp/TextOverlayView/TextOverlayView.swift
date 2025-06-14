@@ -75,6 +75,7 @@ struct TextOverlayView: View {
                 viewModel.saveToCoreData()
             }
 
+
             Spacer()
         }
         .navigationTitle("Text & Color")
