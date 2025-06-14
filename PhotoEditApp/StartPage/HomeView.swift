@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeScreen: View {
     
     
-    @State private var refreshID = UUID()
+//    @State private var refreshID = UUID()
     let originalImage: UIImage
     @StateObject private var viewModel: PhotoEditorViewModel
     
@@ -26,7 +26,8 @@ struct HomeScreen: View {
                 .scaledToFit()
                 .frame(height: 300)
                 .padding()
-                .id(refreshID)
+//                .id(refreshID)
+                .id(viewModel.editedImage) // Forces refresh on image change
             
             ScrollView (.horizontal){
                 HStack(spacing: 20) {
@@ -90,6 +91,18 @@ struct HomeScreen: View {
                             .background(Color.blue.opacity(0.7))
                             .cornerRadius(15)
                     }
+                    
+                    NavigationLink(destination: PhotoOverlayView(viewModel: viewModel)) {
+                        Text("Add Photo")
+                            .font(.subheadline)
+                            .foregroundColor(.white)
+                            .frame(width: 90, height: 30)
+                            .bold()
+                            .padding()
+                            .background(Color.blue.opacity(0.7))
+                            .cornerRadius(15)
+                    }
+
                 }
                 .padding()
             }
@@ -106,11 +119,15 @@ struct HomeScreen: View {
                     .foregroundColor(.white)
                     .cornerRadius(10)
             }
+            
+            Text("Last updated: \(Date().formatted())")
+                .font(.caption)
+
         }
         .navigationTitle("Editor Home")
-        .onChange(of: viewModel.editedImage) { _ in
-            refreshID = UUID()
-        }
+//        .onChange(of: viewModel.editedImage) { _ in
+//            refreshID = UUID()
+//        }
     }
 }
 struct EditButtonStyle: ViewModifier {

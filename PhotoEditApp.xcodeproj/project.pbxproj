@@ -28,6 +28,9 @@
 		4E280DAE2DFD5EAB00D309D5 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E280DAC2DFD5EAB00D309D5 /* Model.xcdatamodeld */; };
 		4E280DB12DFD606D00D309D5 /* PhotoEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280DB02DFD606D00D309D5 /* PhotoEditorViewModel.swift */; };
 		4E280DB32DFD6A0A00D309D5 /* NeonButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280DB22DFD6A0A00D309D5 /* NeonButtonStyle.swift */; };
+		4E280EBD2DFDA54D00D309D5 /* PhotoOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280EBC2DFDA54D00D309D5 /* PhotoOverlayView.swift */; };
+		4E280EC02DFDA57900D309D5 /* OverlayImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280EBF2DFDA57900D309D5 /* OverlayImageView.swift */; };
+		4E280EC22DFDA85C00D309D5 /* ImageRendererView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E280EC12DFDA85C00D309D5 /* ImageRendererView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +75,9 @@
 		4E280DAD2DFD5EAB00D309D5 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		4E280DB02DFD606D00D309D5 /* PhotoEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditorViewModel.swift; sourceTree = "<group>"; };
 		4E280DB22DFD6A0A00D309D5 /* NeonButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeonButtonStyle.swift; sourceTree = "<group>"; };
+		4E280EBC2DFDA54D00D309D5 /* PhotoOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoOverlayView.swift; sourceTree = "<group>"; };
+		4E280EBF2DFDA57900D309D5 /* OverlayImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayImageView.swift; sourceTree = "<group>"; };
+		4E280EC12DFDA85C00D309D5 /* ImageRendererView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRendererView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -149,6 +155,7 @@
 				4E280DA92DFD5DE900D309D5 /* SavedImagesView */,
 				4E280DAF2DFD606000D309D5 /* PhotoEditorViewModel */,
 				4E280DA32DFD5D7400D309D5 /* CoreDataManager */,
+				4E280EBE2DFDA55400D309D5 /* PhotoOverlayView */,
 				4E280D8B2DFD549900D309D5 /* New Group */,
 				4E280D7A2DFD4D5F00D309D5 /* Assets.xcassets */,
 			);
@@ -262,6 +269,16 @@
 				4E280DB02DFD606D00D309D5 /* PhotoEditorViewModel.swift */,
 			);
 			path = PhotoEditorViewModel;
+			sourceTree = "<group>";
+		};
+		4E280EBE2DFDA55400D309D5 /* PhotoOverlayView */ = {
+			isa = PBXGroup;
+			children = (
+				4E280EBC2DFDA54D00D309D5 /* PhotoOverlayView.swift */,
+				4E280EBF2DFDA57900D309D5 /* OverlayImageView.swift */,
+				4E280EC12DFDA85C00D309D5 /* ImageRendererView.swift */,
+			);
+			path = PhotoOverlayView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,6 +430,7 @@
 				4E280DAB2DFD5DF500D309D5 /* SavedImagesView.swift in Sources */,
 				4E280DAE2DFD5EAB00D309D5 /* Model.xcdatamodeld in Sources */,
 				4E280D802DFD4D5F00D309D5 /* BlackWhiteFilterView.swift in Sources */,
+				4E280EC22DFDA85C00D309D5 /* ImageRendererView.swift in Sources */,
 				4E280DA82DFD5DB100D309D5 /* SaveButtonView.swift in Sources */,
 				4E280D8A2DFD4EB200D309D5 /* DrawingOverlay.swift in Sources */,
 				4E280D9C2DFD5CED00D309D5 /* SaturationView.swift in Sources */,
@@ -420,10 +438,12 @@
 				4E280D9F2DFD5D0F00D309D5 /* ShadowEffectView.swift in Sources */,
 				4E280D902DFD571500D309D5 /* StartView.swift in Sources */,
 				4E280D882DFD4E9B00D309D5 /* FreeformCropView.swift in Sources */,
+				4E280EBD2DFDA54D00D309D5 /* PhotoOverlayView.swift in Sources */,
 				4E280D812DFD4D5F00D309D5 /* ContentView.swift in Sources */,
 				4E280D972DFD5BC200D309D5 /* TextOverlayView.swift in Sources */,
 				4E280DB12DFD606D00D309D5 /* PhotoEditorViewModel.swift in Sources */,
 				4E280DB32DFD6A0A00D309D5 /* NeonButtonStyle.swift in Sources */,
+				4E280EC02DFDA57900D309D5 /* OverlayImageView.swift in Sources */,
 				4E280D822DFD4D5F00D309D5 /* ImagePicker.swift in Sources */,
 				4E280D832DFD4D5F00D309D5 /* PhotoEditAppApp.swift in Sources */,
 			);

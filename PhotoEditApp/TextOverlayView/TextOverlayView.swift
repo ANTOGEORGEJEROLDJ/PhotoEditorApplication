@@ -4,11 +4,14 @@
 //
 //  Created by Paranjothi iOS MacBook Pro on 14/06/25.
 //
+//
 
 import SwiftUI
 
 struct TextOverlayView: View {
     @ObservedObject var viewModel: PhotoEditorViewModel
+    @Environment(\.presentationMode) var presentationMode
+
     @State private var text = "Edit Me"
     @State private var textColor = Color.black
     @State private var fontSize: CGFloat = 32
@@ -18,28 +21,31 @@ struct TextOverlayView: View {
 
     var body: some View {
         VStack {
-            ZStack {
-                Image(uiImage: viewModel.editedImage)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 300)
+            GeometryReader { geo in
+                ZStack {
+                    Image(uiImage: viewModel.editedImage)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 300)
 
-                Text(text)
-                    .font(.system(size: fontSize))
-                    .foregroundColor(textColor)
-                    .position(x: textPosition.x + dragOffset.width,
-                              y: textPosition.y + dragOffset.height)
-                    .gesture(
-                        DragGesture()
-                            .onChanged { value in
-                                dragOffset = value.translation
-                            }
-                            .onEnded { _ in
-                                textPosition.x += dragOffset.width
-                                textPosition.y += dragOffset.height
-                                dragOffset = .zero
-                            }
-                    )
+                    Text(text)
+                        .font(.system(size: fontSize))
+                        .foregroundColor(textColor)
+                        .position(x: textPosition.x + dragOffset.width,
+                                  y: textPosition.y + dragOffset.height)
+                        .gesture(
+                            DragGesture()
+                                .onChanged { value in
+                                    dragOffset = value.translation
+                                }
+                                .onEnded { _ in
+                                    textPosition.x += dragOffset.width
+                                    textPosition.y += dragOffset.height
+                                    dragOffset = .zero
+                                }
+                        )
+                }
+                .frame(height: 300)
             }
 
             TextField("Enter Text", text: $text)
@@ -60,10 +66,15 @@ struct TextOverlayView: View {
                     text: text,
                     color: UIColor(textColor),
                     fontSize: fontSize,
-                    position: textPosition
+                    position: CGPoint(x: textPosition.x + dragOffset.width, y: textPosition.y + dragOffset.height)
                 ) {
                     viewModel.updateImage(combined)
                     showSaveAlert = true
+
+                    // Optional: auto dismiss
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        presentationMode.wrappedValue.dismiss()
+                    }
                 }
             }
             .padding()
@@ -75,7 +86,6 @@ struct TextOverlayView: View {
                 viewModel.saveToCoreData()
             }
 
-
             Spacer()
         }
         .navigationTitle("Text & Color")
@@ -86,30 +96,37 @@ struct TextOverlayView: View {
     }
 
     func renderImageWithText(baseImage: UIImage, text: String, color: UIColor, fontSize: CGFloat, position: CGPoint) -> UIImage? {
-        let renderer = UIGraphicsImageRenderer(size: baseImage.size)
+        let imageSize = baseImage.size
+        let viewWidth: CGFloat = UIScreen.main.bounds.width
+        let imageViewHeight: CGFloat = 300
+
+        // Calculate scaling from view to actual image
+        let imageAspectRatio = baseImage.size.width / baseImage.size.height
+        let scaledWidth = imageViewHeight * imageAspectRatio
+        let scaleX = imageSize.width / scaledWidth
+        let scaleY = imageSize.height / imageViewHeight
+
+        // Final draw point
+        let drawPoint = CGPoint(
+            x: position.x * scaleX - (fontSize * scaleX) / 2,
+            y: position.y * scaleY - (fontSize * scaleY) / 2
+        )
+
+        let renderer = UIGraphicsImageRenderer(size: imageSize)
         return renderer.image { context in
             baseImage.draw(at: .zero)
 
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.alignment = .center
 
-            let attrs: [NSAttributedString.Key: Any] = [
-                .font: UIFont.systemFont(ofSize: fontSize),
+            let attributes: [NSAttributedString.Key: Any] = [
+                .font: UIFont.systemFont(ofSize: fontSize * scaleX),
                 .foregroundColor: color,
                 .paragraphStyle: paragraphStyle
             ]
 
-            let attributedString = NSAttributedString(string: text, attributes: attrs)
-            let textSize = attributedString.size()
-
-            // Scale position from view size to actual image size
-            let scale = baseImage.size.width / UIScreen.main.bounds.width
-            let drawPoint = CGPoint(
-                x: (position.x - textSize.width / 2) * scale,
-                y: (position.y - textSize.height / 2) * scale
-            )
-
-            attributedString.draw(in: CGRect(origin: drawPoint, size: textSize))
+            let attributedText = NSAttributedString(string: text, attributes: attributes)
+            attributedText.draw(at: drawPoint)
         }
     }
 }

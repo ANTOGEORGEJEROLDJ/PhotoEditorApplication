@@ -16,9 +16,18 @@ class PhotoEditorViewModel: ObservableObject {
         self.editedImage = image
     }
 
-    func updateImage(_ image: UIImage) {
-        self.editedImage = image
+    func updateImage(_ newImage: UIImage) {
+        DispatchQueue.main.async {
+            // Force a new image reference (even if pixels are similar)
+            let data = newImage.pngData()
+            if let data = data, let forcedImage = UIImage(data: data) {
+                self.editedImage = forcedImage
+            } else {
+                self.editedImage = newImage
+            }
+        }
     }
+
 
     func resetToOriginal() {
         self.editedImage = originalImage

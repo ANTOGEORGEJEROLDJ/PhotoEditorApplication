@@ -28,6 +28,7 @@ struct ShadowEffectView: View {
                     .resizable()
                     .scaledToFit()
                     .shadow(color: color, radius: radius, x: offset.width, y: offset.height)
+                
             }
             .frame(height: 300)
 
